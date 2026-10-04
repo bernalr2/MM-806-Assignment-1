@@ -9,6 +9,7 @@ public class GameplayManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        countdownTextObject.SetActive(true);
         StartCoroutine(BeginGameCountdown());
         StartCoroutine(CountdownText(3));
     }
@@ -21,6 +22,7 @@ public class GameplayManager : MonoBehaviour
             yield return new WaitForSecondsRealtime(1);
         }
         countdownTextObject.GetComponent<TextMeshProUGUI>().text = "Go!";
+        StartCoroutine(HideCountdown());
     }
     
     IEnumerator BeginGameCountdown()
@@ -28,6 +30,12 @@ public class GameplayManager : MonoBehaviour
         Time.timeScale = 0;
         yield return new WaitForSecondsRealtime(3);
         Time.timeScale = 1;
+    }
+
+    IEnumerator HideCountdown()
+    {
+        yield return new WaitForSeconds(1);
+        countdownTextObject.SetActive(false);
     }
     
 }
