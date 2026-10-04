@@ -20,8 +20,10 @@ public class PlayerController : MonoBehaviour
     // UI text component to display count of "PickUp" objects collected.
     public TextMeshProUGUI countText;
     
-    // UI object to display winning text.
+    // UI object to display winning text and menu buttons.
     public GameObject winTextObject;
+    public GameObject playAgainButton;
+    public GameObject mainMenuButton;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -36,8 +38,10 @@ public class PlayerController : MonoBehaviour
         // Update the count display.
         SetCountText();
         
-        // Initially set the win text to be inactive.
+        // Initially set the win text and menu buttons to be inactive.
         winTextObject.SetActive(false);
+        playAgainButton.SetActive(false);
+        mainMenuButton.SetActive(false);
     }
 
     // This function is called when a move input is detected.
@@ -86,8 +90,10 @@ public class PlayerController : MonoBehaviour
         // Check if the count has reached or exceeded the win condition.
         if (count >= 10)
         {
-            // Display the win text.
+            // Display the win text and menu buttons.
             winTextObject.SetActive(true);
+            playAgainButton.SetActive(true);
+            mainMenuButton.SetActive(true);
             
             // Destroy the enemy GameObject.
             Destroy(GameObject.FindGameObjectWithTag("Enemy"));
@@ -104,6 +110,8 @@ public class PlayerController : MonoBehaviour
             // Update the winText to display "You Lose!"
             winTextObject.gameObject.SetActive(true);
             winTextObject.GetComponent<TextMeshProUGUI>().text = "You Lose!";
+            playAgainButton.SetActive(true);
+            mainMenuButton.SetActive(true);
         }
     }
 }
