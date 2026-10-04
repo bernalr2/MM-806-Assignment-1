@@ -17,13 +17,7 @@ public class PlayerController : MonoBehaviour
     // Speed at which the player moves.
     public float speed = 0;
     
-    // UI text component to display count of "PickUp" objects collected.
-    public TextMeshProUGUI countText;
-    
-    // UI object to display winning text and menu buttons.
-    public GameObject winTextObject;
-    public GameObject playAgainButton;
-    public GameObject mainMenuButton;
+    public GameObject gameplayManagerReference;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -36,12 +30,11 @@ public class PlayerController : MonoBehaviour
         count = 0;
         
         // Update the count display.
-        SetCountText();
-        
-        // Initially set the win text and menu buttons to be inactive.
-        winTextObject.SetActive(false);
-        playAgainButton.SetActive(false);
-        mainMenuButton.SetActive(false);
+        var gameplayManager = gameplayManagerReference.GetComponent<GameplayManager>();
+        if (gameplayManager)
+        {
+            gameplayManager.SetCountText(count);
+        }
     }
 
     // This function is called when a move input is detected.
@@ -77,26 +70,11 @@ public class PlayerController : MonoBehaviour
             count += 1;
             
             // Update the count display.
-            SetCountText();
-        }
-    }
-    
-    // Function to update the displayed count of "PickUp" objects collected.
-    void SetCountText()
-    {
-        // Update the count text with the current count.
-        countText.text = "Count: " + count.ToString();
-
-        // Check if the count has reached or exceeded the win condition.
-        if (count >= 10)
-        {
-            // Display the win text and menu buttons.
-            winTextObject.SetActive(true);
-            playAgainButton.SetActive(true);
-            mainMenuButton.SetActive(true);
-            
-            // Destroy the enemy GameObject.
-            Destroy(GameObject.FindGameObjectWithTag("Enemy"));
+            var gameplayManager = gameplayManagerReference.GetComponent<GameplayManager>();
+            if (gameplayManager)
+            {
+                gameplayManager.SetCountText(count);
+            }
         }
     }
 
@@ -107,11 +85,11 @@ public class PlayerController : MonoBehaviour
             // Destroy the current object
             Destroy(gameObject);
             
-            // Update the winText to display "You Lose!"
-            winTextObject.gameObject.SetActive(true);
-            winTextObject.GetComponent<TextMeshProUGUI>().text = "You Lose!";
-            playAgainButton.SetActive(true);
-            mainMenuButton.SetActive(true);
+            var gameplayManager = gameplayManagerReference.GetComponent<GameplayManager>();
+            if (gameplayManager)
+            {
+                gameplayManager.GameOver();
+            }
         }
     }
 }
