@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     // Rigidbody of the player.
     private Rigidbody rb;
 
+    // Variable to keep track of collected "PickUp" objects.
     private int count;
     
     // Movement along X and Y axes.
@@ -87,6 +88,22 @@ public class PlayerController : MonoBehaviour
         {
             // Display the win text.
             winTextObject.SetActive(true);
+            
+            // Destroy the enemy GameObject.
+            Destroy(GameObject.FindGameObjectWithTag("Enemy"));
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            // Destroy the current object
+            Destroy(gameObject);
+            
+            // Update the winText to display "You Lose!"
+            winTextObject.gameObject.SetActive(true);
+            winTextObject.GetComponent<TextMeshProUGUI>().text = "You Lose!";
         }
     }
 }
