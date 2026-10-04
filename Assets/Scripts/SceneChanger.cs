@@ -12,4 +12,9 @@ public class SceneChanger : MonoBehaviour
             Debug.Log(sceneName + " has successfully loaded!");
         }
     }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
 }
