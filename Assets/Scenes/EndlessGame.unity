@@ -556,10 +556,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa34ecdf520076c4c8908d6a83f5c623, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameplayManager
-  countdownTextObject: {fileID: 633019957}
+  maxPoints: 1000
   spawnManagerReference: {fileID: 1120574501}
   pickUpPrefab: {fileID: 4644974020671022985, guid: 9b8d04c5ef1c5c94e9aea2c72823863e, type: 3}
-  maxPoints: 1000
+  countdownTextObject: {fileID: 633019957}
   winTextObject: {fileID: 2026524691}
   playAgainButton: {fileID: 80346031}
   mainMenuButton: {fileID: 173288348}
@@ -1213,7 +1213,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7b76d51d25fb5a042879fe6edbfb928a, type: 2}
+  - {fileID: 2100000, guid: 2f4e6b04885ebd443be1033065912ada, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1338,7 +1338,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SpawnManager
   enemyPrefab: {fileID: 1579890235187876440, guid: fc59b380ffb44b4428b70707c1cd18a1, type: 3}
   pickUpPrefab: {fileID: 4644974020671022985, guid: 9b8d04c5ef1c5c94e9aea2c72823863e, type: 3}
-  fixedSpawnHeight: 0.5
+  fixedYPosition: 0.5
   minXPosition: -5
   maxXPosition: 5
   minZPosition: -5
@@ -1548,7 +1548,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 946f144e2d0ee0244bbae7eaa539b8c3, type: 2}
+  - {fileID: 2100000, guid: 45003b7e1ff6fde469b13fbef988ce73, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1781,7 +1781,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f481ded96a6902c49921fcec68948538, type: 2}
+  - {fileID: 2100000, guid: 280de690a069f214dbb8f693f1a07f92, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1893,7 +1893,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f481ded96a6902c49921fcec68948538, type: 2}
+  - {fileID: 2100000, guid: 280de690a069f214dbb8f693f1a07f92, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2142,7 +2142,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f481ded96a6902c49921fcec68948538, type: 2}
+  - {fileID: 2100000, guid: 280de690a069f214dbb8f693f1a07f92, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2254,7 +2254,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f481ded96a6902c49921fcec68948538, type: 2}
+  - {fileID: 2100000, guid: 280de690a069f214dbb8f693f1a07f92, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
