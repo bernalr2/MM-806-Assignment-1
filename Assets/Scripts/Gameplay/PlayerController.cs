@@ -17,9 +17,10 @@ public class PlayerController : MonoBehaviour
     // Speed at which the player moves.
     public float speed = 0;
     
+    // The reference to the GameplayManager object.
     public GameObject gameplayManagerReference;
     
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    // Start is called once before the first execution of Update after the MonoBehaviour is created.
     void Start()
     {
         // Get and store the Rigidbody component attached to the player.
@@ -29,7 +30,7 @@ public class PlayerController : MonoBehaviour
         // Initialize count to zero.
         count = 0;
         
-        // Update the count display.
+        // Inform the gameplayManager to update the count display.
         var gameplayManager = gameplayManagerReference.GetComponent<GameplayManager>();
         if (gameplayManager)
         {
@@ -69,12 +70,12 @@ public class PlayerController : MonoBehaviour
             // Increment the count of "PickUp" objects collected.
             count += 1;
             
-            // Update the count display.
+            // Inform the gameplayManager to update the count display.
             var gameplayManager = gameplayManagerReference.GetComponent<GameplayManager>();
             if (gameplayManager)
             {
-                gameplayManager.SignalSpawn();
                 gameplayManager.SetCountText(count);
+                gameplayManager.SignalSpawn();
             }
         }
     }
@@ -83,9 +84,10 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            // Destroy the current object
+            // Destroy the current object.
             Destroy(gameObject);
             
+            // Inform the gameplayManager to end the game.
             var gameplayManager = gameplayManagerReference.GetComponent<GameplayManager>();
             if (gameplayManager)
             {

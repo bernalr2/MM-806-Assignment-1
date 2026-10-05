@@ -916,13 +916,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa34ecdf520076c4c8908d6a83f5c623, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameplayManager
-  countdownTextObject: {fileID: 633019957}
+  maxPoints: 10
   spawnManagerReference: {fileID: 0}
-  countText: {fileID: 1893242137}
+  pickUpPrefab: {fileID: 4644974020671022985, guid: 9b8d04c5ef1c5c94e9aea2c72823863e, type: 3}
+  countdownTextObject: {fileID: 633019957}
   winTextObject: {fileID: 2026524691}
   playAgainButton: {fileID: 80346031}
   mainMenuButton: {fileID: 173288348}
-  maxPoints: 10
+  countText: {fileID: 1893242137}
 --- !u!1 &320104350
 GameObject:
   m_ObjectHideFlags: 0
@@ -2702,11 +2703,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   speed: 10
-  maxPoints: 10
-  countText: {fileID: 1893242137}
-  winTextObject: {fileID: 2026524691}
-  playAgainButton: {fileID: 80346031}
-  mainMenuButton: {fileID: 173288348}
   gameplayManagerReference: {fileID: 293000142}
 --- !u!114 &1422997470
 MonoBehaviour:
