@@ -18,12 +18,23 @@ public class SpawnManager : MonoBehaviour
     void Start()
     {
         SpawnObject(pickUpPrefab);
+        StartCoroutine(SpawnEnemy());
     }
 
     public void SpawnObject(GameObject prefab)
     {
         var spawnPosition = GetRandomSpawnPosition();
         Instantiate(prefab, spawnPosition, Quaternion.identity);
+    }
+
+    IEnumerator SpawnEnemy()
+    {
+        while (true)
+        {
+            Vector3 spawnPosition = GetRandomSpawnPosition();
+            Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
+            yield return new WaitForSeconds(8);
+        }
     }
     
     private Vector3 GetRandomSpawnPosition()

@@ -558,6 +558,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameplayManager
   countdownTextObject: {fileID: 633019957}
   spawnManagerReference: {fileID: 1120574501}
+  pickUpPrefab: {fileID: 4644974020671022985, guid: 9b8d04c5ef1c5c94e9aea2c72823863e, type: 3}
   maxPoints: 1000
   winTextObject: {fileID: 2026524691}
   playAgainButton: {fileID: 80346031}

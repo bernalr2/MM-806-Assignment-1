@@ -73,6 +73,7 @@ public class PlayerController : MonoBehaviour
             var gameplayManager = gameplayManagerReference.GetComponent<GameplayManager>();
             if (gameplayManager)
             {
+                gameplayManager.SignalSpawn();
                 gameplayManager.SetCountText(count);
             }
         }

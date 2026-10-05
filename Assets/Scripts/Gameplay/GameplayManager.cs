@@ -1,19 +1,19 @@
 using UnityEngine;
 using System.Collections;
 using TMPro;
+using UnityEngine.Analytics;
 
 public class GameplayManager : MonoBehaviour
 {
-    public GameObject countdownTextObject;
-    public GameObject spawnManagerReference;
-    
-    //public GameObject enemyPrefab;
-    //public GameObject pickUpPrefab;
-    
     public int maxPoints = 0;
+    
+    [Header("Game Object References")]
+    public GameObject spawnManagerReference;
+    public GameObject pickUpPrefab;
     
     // UI object to display winning text and menu buttons.
     [Header("UI")]
+    public GameObject countdownTextObject;
     public GameObject winTextObject;
     public GameObject playAgainButton;
     public GameObject mainMenuButton;
@@ -55,16 +55,16 @@ public class GameplayManager : MonoBehaviour
         yield return new WaitForSeconds(1);
         countdownTextObject.SetActive(false);
     }
-
-    /*
+    
     public void SignalSpawn()
     {
         var spawnManager = spawnManagerReference.GetComponent<SpawnManager>();
-        if (spawnManager)
+        if (!spawnManager)
         {
-            spawnManager.SpawnObject(pickUpPrefab);
+            return;
         }
-    } */
+        spawnManager.SpawnObject(pickUpPrefab);
+    } 
 
     private void ToggleUI(bool bIsActive)
     {
